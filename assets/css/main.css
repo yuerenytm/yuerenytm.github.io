@@ -320,6 +320,7 @@ a {
   background-image: var(--hero-image);
   background-position: center 68%;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .hero__media {
