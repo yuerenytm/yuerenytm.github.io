@@ -1,0 +1,19 @@
+# 首页西湖画面。
+# 放入 hero.mp4 后，把 video_ready 改为 true，并在 credits 中补上影像的作者、许可和来源。
+# 没有视频时，页面使用封面照片；视频无法播放或用户偏好减少动态时，也同样回到封面。
+hero:
+  video_ready: false
+  poster_ready: true
+  video: /assets/media/west-lake/hero.mp4
+  video_type: video/mp4
+  poster: /assets/media/west-lake/hero-poster.jpg
+  credits:
+    - role: 封面摄影
+      title: Sunrise at Xihu, Westlake
+      author: Carsten Ullrich
+      author_url: https://www.flickr.com/people/7926008@N08
+      source_url: https://commons.wikimedia.org/wiki/File:Sunrise_at_Xihu_(Westlake),_Hangzhou_105.jpg
+      license: CC BY-SA 2.0
+      license_url: https://creativecommons.org/licenses/by-sa/2.0/
+      changes: 未作裁切或调色
+      sha256: 9ce7ae4df0057664ea48c098a9e767e8b7cfb53cdf965950160b4b1cc4dc18e5

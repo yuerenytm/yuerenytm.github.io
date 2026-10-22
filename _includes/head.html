@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% assign summary = page.description | default: page.dek | default: page.summary | default: site.description %}
+{% if page.url == "/" %}
+<title>{{ site.title }}</title>
+{% else %}
+<title>{{ page.title }} · {{ site.title }}</title>
+{% endif %}
+<meta name="description" content="{{ summary | strip | escape }}">
+{% if page.example %}<meta name="robots" content="noindex">{% endif %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{% if page.url == "/" %}
+<meta property="og:title" content="{{ site.title }}">
+{% else %}
+<meta property="og:title" content="{{ page.title }} · {{ site.title }}">
+{% endif %}
+<meta property="og:description" content="{{ summary | strip | escape }}">
+{% if page.url == "/" and site.data.media.hero.poster_ready %}
+<meta property="og:image" content="{{ site.data.media.hero.poster | absolute_url }}">
+{% endif %}
+<meta name="theme-color" content="{% if page.layout == 'home' %}#14221c{% else %}#f3efe6{% endif %}">
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

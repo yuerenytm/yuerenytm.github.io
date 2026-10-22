@@ -1,0 +1,47 @@
+{%- assign hero = site.data.media.hero -%}
+<section class="hero{% unless hero.video_ready %} is-still{% endunless %}" data-hero{% if hero.poster_ready %} style="--hero-image: url('{{ hero.poster | relative_url }}')"{% endif %}>
+  <video
+    class="hero__media"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="none"
+    {% if hero.poster_ready %}poster="{{ hero.poster | relative_url }}"{% endif %}
+    {% if hero.video_ready %}data-src="{{ hero.video | relative_url }}" data-type="{{ hero.video_type | default: 'video/mp4' }}"{% endif %}
+    aria-hidden="true"
+  ></video>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="hero__center">
+    <p class="hero__kicker" lang="en">{{ site.english_label }}</p>
+    <h1 class="hero__title" id="hero-title">{{ site.title }}</h1>
+    <p class="hero__subtitle">{{ site.description }}</p>
+    <a class="hero__enter" href="#archive">
+      <span>进入调查档案</span>
+      <span class="hero__cue" aria-hidden="true"></span>
+    </a>
+  </div>
+  {%- if hero.credits -%}
+    <p class="hero__credit">
+      {%- for credit in hero.credits -%}
+        <span class="hero__credit-item">
+          {{ credit.role }}：
+          {%- if credit.source_url -%}
+            <a href="{{ credit.source_url }}" rel="noopener">{{ credit.title }}</a>
+          {%- else -%}
+            {{ credit.title }}
+          {%- endif -%}
+          ，
+          {%- if credit.author_url -%}
+            <a href="{{ credit.author_url }}" rel="noopener">{{ credit.author }}</a>
+          {%- else -%}
+            {{ credit.author }}
+          {%- endif -%}
+          ，
+          <a href="{{ credit.license_url }}" rel="license noopener">{{ credit.license }}</a>
+          {%- if credit.changes -%}。{{ credit.changes }}{%- endif -%}
+        </span>
+      {%- endfor -%}
+    </p>
+  {%- endif -%}
+</section>

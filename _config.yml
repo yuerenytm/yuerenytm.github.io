@@ -1,3 +1,61 @@
+# 宅兹浙江
+# 这是 GitHub 用户站点，页面在域名根路径。
+# 若将来改放到项目站点的子目录，再把 baseurl 设成该子路径。
 title: 宅兹浙江
 description: 七山二水一分田的历史与人间
 lang: zh-CN
+english_label: ZHEJIANG · FIELD RESEARCH ARCHIVE
+
+url: https://yuerenytm.github.io
+baseurl: ""
+timezone: Asia/Shanghai
+encoding: utf-8
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  regions:
+    output: true
+    permalink: /regions/:name/
+  field_notes:
+    output: true
+    permalink: /field-notes/:name/
+  references:
+    output: true
+    permalink: /references/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: regions
+    values:
+      layout: entry
+  - scope:
+      path: ""
+      type: field_notes
+    values:
+      layout: entry
+  - scope:
+      path: ""
+      type: references
+    values:
+      layout: entry
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts
+  - vendor
+  - node_modules
+  - _scripts

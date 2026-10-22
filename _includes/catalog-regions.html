@@ -1,0 +1,17 @@
+{%- assign items = site.regions | where_exp: "item", "item.published != false" | where_exp: "item", "item.listed != false" | sort: "title" -%}
+{% if items.size == 0 %}
+  <p class="empty">尚未发布地区。等一个地方有了材料，再为它单开一页。</p>
+{% else %}
+  <ul class="catalog">
+    {% for item in items %}
+      <li>
+        <a class="catalog__item catalog__item--plain" href="{{ item.url | relative_url }}">
+          <span class="catalog__main">
+            <span class="catalog__title">{{ item.title }}</span>
+            {% if item.summary %}<span class="catalog__note">{{ item.summary }}</span>{% endif %}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

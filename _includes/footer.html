@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="shell">
+    <nav class="footer-nav" aria-label="页脚">
+      {%- for item in site.data.navigation -%}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+    <p class="footer-name">{{ site.title }}</p>
+    <p>个人研究档案。材料随阅读和行走增补；没有出处的地方，不写成结论。</p>
+  </div>
+</footer>

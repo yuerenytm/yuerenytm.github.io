@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  {% include head.html %}
+</head>
+<body class="layout-{{ page.layout }}">
+  <a class="skip" href="#content">跳到正文</a>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+  {% if page.layout == "home" %}
+    <script src="{{ '/assets/js/hero.js' | relative_url }}"></script>
+  {% endif %}
+</body>
+</html>

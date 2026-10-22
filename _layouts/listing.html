@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<main id="content" class="shell page">
+  <header class="page-head">
+    <p class="kicker">{{ page.kicker | default: "档案" }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.dek %}<p class="dek">{{ page.dek }}</p>{% endif %}
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+  {% if page.kind == "regions" %}
+    {% include catalog-regions.html %}
+  {% elsif page.kind == "field_notes" %}
+    {% include catalog-field-notes.html %}
+  {% elsif page.kind == "references" %}
+    {% include catalog-references.html %}
+  {% endif %}
+</main>

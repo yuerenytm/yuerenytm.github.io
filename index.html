@@ -1,25 +1,40 @@
-
 ---
-layout: default
+layout: home
 title: 首页
+permalink: /
 ---
+<div class="lede">
+  <p>这是一份关于浙江的个人研究档案。它从地方志、学术文献、实地走访、摄影、访谈和资料整理里，慢慢记下各地的历史沿革、自然地理、社会发展、地方文化与日常生活。</p>
+  <p class="lede__aside">这里不介绍景点，也不把尚未核对的材料写成结论。</p>
+</div>
 
-# 浙江省田野调查报告
-
-一项关于浙江地方历史、社会与地域文化的长期调查研究。
-
-## 关于本项目
-
-本项目旨在通过文献整理、实地走访、影像记录与地方资料搜集，
-逐步建立浙江各地的研究档案。
-
-## 研究范围
-
-- [研究说明](about.md)
-- [地区索引](regions.md)
-- [田野记录](field-notes.md)
-- [参考资料](references.md)
-
----
-
-持续建设中。
+<nav class="catalog" aria-label="档案入口">
+  <a class="catalog__item" href="{{ '/about/' | relative_url }}">
+    <span class="catalog__no">01</span>
+    <span class="catalog__main">
+      <span class="catalog__title">项目说明</span>
+      <span class="catalog__note">为何做、写到哪里、怎样增补</span>
+    </span>
+  </a>
+  <a class="catalog__item" href="{{ '/regions/' | relative_url }}">
+    <span class="catalog__no">02</span>
+    <span class="catalog__main">
+      <span class="catalog__title">地区索引</span>
+      <span class="catalog__note">各地档案的入口，随材料增加</span>
+    </span>
+  </a>
+  <a class="catalog__item" href="{{ '/field-notes/' | relative_url }}">
+    <span class="catalog__no">03</span>
+    <span class="catalog__main">
+      <span class="catalog__title">田野记录</span>
+      <span class="catalog__note">走访的日期、地点与见闻</span>
+    </span>
+  </a>
+  <a class="catalog__item" href="{{ '/references/' | relative_url }}">
+    <span class="catalog__no">04</span>
+    <span class="catalog__main">
+      <span class="catalog__title">参考资料</span>
+      <span class="catalog__note">地方志、论著、论文与公开数据的出处</span>
+    </span>
+  </a>
+</nav>

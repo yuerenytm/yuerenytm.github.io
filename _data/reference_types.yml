@@ -1,0 +1,15 @@
+- id: gazetteer
+  title: 地方志
+  note: 府、州、县、乡镇志，以及同一部志书的不同版本。
+- id: book
+  title: 论著
+  note: 学术著作与调查报告。
+- id: article
+  title: 论文
+  note: 期刊、论文集或学位论文中实际参考过的篇章。
+- id: data
+  title: 统计与公开数据
+  note: 年鉴、公报和其他可以复核的公开数字。使用时记下口径与年份。
+- id: archive
+  title: 档案与影像
+  note: 档案卷宗、旧照片、口述和有授权的影像。一并记下保存位置。

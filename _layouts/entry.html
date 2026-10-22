@@ -1,0 +1,67 @@
+---
+layout: default
+---
+<main id="content" class="shell page">
+  <article
+    class="entry"
+    data-kind="{{ page.collection }}"
+    {% if page.date %}data-date="{{ page.date | date: '%Y-%m-%d' }}"{% endif %}
+    {% if page.region and page.region != "" %}data-region="{{ page.region | escape }}"{% endif %}
+    {% if page.tags %}data-tags="{{ page.tags | join: ',' | escape }}"{% endif %}
+  >
+    <header class="page-head">
+      {% if page.example %}<p class="flag">示例 · 不是调查实录</p>{% endif %}
+      <p class="kicker">
+        {%- case page.collection -%}
+          {%- when "field_notes" -%}田野记录
+          {%- when "regions" -%}地区
+          {%- when "references" -%}参考资料
+          {%- else -%}档案
+        {%- endcase -%}
+      </p>
+      <h1>{{ page.title }}</h1>
+      {% if page.collection == "field_notes" %}
+        <p class="meta">
+          {% if page.example %}示例编写于{% else %}调查日期{% endif %}
+          {% if page.date %}{{ page.date | date: "%Y-%m-%d" }}{% endif %}
+          {% if page.place %} · {{ page.place }}{% endif %}
+          {% if page.region and page.region != "" %} · {{ page.region }}{% endif %}
+        </p>
+      {% elsif page.collection == "references" %}
+        <p class="meta">
+          {% if page.authors %}{{ page.authors | join: "、" }}{% endif %}
+          {% if page.year %}{% if page.authors %} · {% endif %}{{ page.year }}{% endif %}
+          {% if page.source %} · {{ page.source }}{% endif %}
+        </p>
+      {% elsif page.status %}
+        <p class="meta">{{ page.status }}</p>
+      {% endif %}
+      {% if page.summary %}<p class="dek">{{ page.summary }}</p>{% endif %}
+      {% if page.tags and page.tags.size > 0 %}
+        <ul class="tags" aria-label="标签">
+          {% for tag in page.tags %}
+            <li>{{ tag }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </header>
+    <div class="prose">
+      {{ content }}
+    </div>
+    {% if page.link %}
+      <p class="source-line"><a href="{{ page.link }}">在线文本</a></p>
+    {% endif %}
+    {% if page.images and page.images.size > 0 %}
+      <ul class="figures">
+        {% for image in page.images %}
+          <li>
+            <figure>
+              <img src="{{ image.path | relative_url }}" alt="{{ image.alt | escape }}">
+              {% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
+            </figure>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </article>
+</main>

@@ -1,0 +1,36 @@
+{%- assign notes = site.field_notes | where_exp: "item", "item.example != true" | where_exp: "item", "item.published != false" | where_exp: "item", "item.listed != false" | sort: "date" | reverse -%}
+{%- assign examples = site.field_notes | where: "example", true | where_exp: "item", "item.published != false" | sort: "date" | reverse -%}
+{% if notes.size == 0 %}
+  <p class="empty">尚未发布实地记录。</p>
+{% else %}
+  <ul class="catalog">
+    {% for item in notes %}
+      <li>
+        <a class="catalog__item" href="{{ item.url | relative_url }}">
+          <span class="catalog__meta">{% if item.date %}{{ item.date | date: "%Y-%m-%d" }}{% endif %}</span>
+          <span class="catalog__main">
+            <span class="catalog__title">{{ item.title }}</span>
+            {% if item.place %}<span class="catalog__note">{{ item.place }}</span>{% endif %}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% if examples.size > 0 %}
+  <h2 class="section-label">版式示例</h2>
+  <p class="pending">下面这条只演示版式，不是调查。</p>
+  <ul class="catalog">
+    {% for item in examples %}
+      <li>
+        <a class="catalog__item" href="{{ item.url | relative_url }}">
+          <span class="catalog__meta">示例</span>
+          <span class="catalog__main">
+            <span class="catalog__title">{{ item.title }}</span>
+            {% if item.place %}<span class="catalog__note">{{ item.place }}</span>{% endif %}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

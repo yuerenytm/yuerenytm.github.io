@@ -1,0 +1,10 @@
+- title: 首页
+  url: /
+- title: 项目说明
+  url: /about/
+- title: 地区索引
+  url: /regions/
+- title: 田野记录
+  url: /field-notes/
+- title: 参考资料
+  url: /references/
