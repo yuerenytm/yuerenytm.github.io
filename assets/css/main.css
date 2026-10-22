@@ -284,15 +284,17 @@ a {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: url("../media/west-lake/hero-poster.jpg");
-  background-position: center 68%;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(rgba(243, 239, 230, 0.76), rgba(243, 239, 230, 0.82)),
+    url("../media/west-lake/hero-poster.jpg");
+  background-position: center 68%, center 68%;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .layout-home .home-archive,
 .layout-home .site-footer {
-  background: rgba(243, 239, 230, 0.88);
+  background: transparent;
 }
 
 .layout-home .site-header {
@@ -300,8 +302,8 @@ a {
   top: 0;
   right: 0;
   left: 0;
-  color: var(--hero-ink);
-  background: linear-gradient(to bottom, rgba(10, 16, 14, 0.5), rgba(10, 16, 14, 0));
+  color: var(--ink);
+  background: linear-gradient(to bottom, rgba(243, 239, 230, 0.92), rgba(243, 239, 230, 0));
   border-bottom: 0;
 }
 
@@ -319,7 +321,7 @@ a {
   min-height: 100dvh;
   padding: 6.5rem 1.25rem 5.5rem;
   overflow: hidden;
-  color: var(--hero-ink);
+  color: var(--ink);
   background: transparent;
 }
 
@@ -346,8 +348,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(to bottom, rgba(10, 16, 14, 0.46) 0%, rgba(10, 16, 14, 0.28) 45%, rgba(10, 16, 14, 0.46) 100%);
+  background: none;
   pointer-events: none;
 }
 
@@ -360,10 +361,9 @@ a {
 
 .hero__kicker {
   margin-bottom: 1.15rem;
-  color: rgba(244, 240, 230, 0.85);
+  color: var(--ink-soft);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
 }
 
 .hero__title {
@@ -373,7 +373,7 @@ a {
   letter-spacing: 0.2em;
   line-height: 1.12;
   text-indent: 0.2em;
-  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.28);
+  text-shadow: 0 1px 24px rgba(255, 255, 255, 0.5);
 }
 
 .hero__subtitle {
@@ -384,7 +384,7 @@ a {
   letter-spacing: 0.12em;
   line-height: 1.75;
   text-wrap: balance;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
+  color: var(--ink-soft);
 }
 
 .hero__enter {
@@ -398,12 +398,12 @@ a {
 }
 
 .hero__enter span:first-child {
-  border-bottom: 1px solid rgba(244, 240, 230, 0.55);
+  border-bottom: 1px solid rgba(28, 36, 32, 0.35);
   padding-bottom: 0.2em;
 }
 
 .hero__enter:hover span:first-child {
-  border-bottom-color: var(--hero-ink);
+  border-bottom-color: var(--ink);
 }
 
 .hero__cue {
