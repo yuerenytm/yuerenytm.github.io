@@ -273,22 +273,26 @@ a {
   font-size: 0.88em;
 }
 
-/* 首页整页沿用同一张西湖照片：固定背景 + 一层纸色薄纱，
-   让照片铺满整页，同时保证正文可读 */
+/* 首页整页沿用同一张西湖照片：用 position:fixed 的独立背景层，
+   滚动时图片绝对不动；纸色薄纱保证正文可读 */
 .layout-home {
   background-color: var(--paper);
-  background-image:
-    linear-gradient(rgba(243, 239, 230, 0.72), rgba(243, 239, 230, 0.78)),
-    url("../media/west-lake/hero-poster.jpg");
-  background-position: center 68%, center 68%;
-  background-size: cover, cover;
-  background-repeat: no-repeat, no-repeat;
-  background-attachment: fixed, fixed;
+}
+
+.layout-home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("../media/west-lake/hero-poster.jpg");
+  background-position: center 68%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .layout-home .home-archive,
 .layout-home .site-footer {
-  background: transparent;
+  background: rgba(243, 239, 230, 0.88);
 }
 
 .layout-home .site-header {
@@ -316,11 +320,7 @@ a {
   padding: 6.5rem 1.25rem 5.5rem;
   overflow: hidden;
   color: var(--hero-ink);
-  background-color: var(--moss-deep);
-  background-image: var(--hero-image);
-  background-position: center 68%;
-  background-size: cover;
-  background-attachment: fixed;
+  background: transparent;
 }
 
 .hero__media {
@@ -347,7 +347,7 @@ a {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to bottom, rgba(10, 16, 14, 0.34) 0%, rgba(10, 16, 14, 0.12) 30%, rgba(10, 16, 14, 0.20) 62%, rgba(10, 16, 14, 0.46) 100%);
+    linear-gradient(to bottom, rgba(10, 16, 14, 0.46) 0%, rgba(10, 16, 14, 0.28) 45%, rgba(10, 16, 14, 0.46) 100%);
   pointer-events: none;
 }
 
