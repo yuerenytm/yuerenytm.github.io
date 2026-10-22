@@ -9,6 +9,7 @@
   --moss-deep: #14221c;
   --lake: #3d5c56;
   --hero-ink: #f4f0e6;
+  --veil: 0.6;
   --measure: 40rem;
   --wide: 68rem;
   color-scheme: light;
@@ -285,7 +286,7 @@ a {
   inset: 0;
   z-index: -1;
   background-image:
-    linear-gradient(rgba(243, 239, 230, 0.70), rgba(243, 239, 230, 0.76)),
+    linear-gradient(rgba(243, 239, 230, var(--veil)), rgba(243, 239, 230, calc(var(--veil) + 0.06))),
     url("../media/west-lake/hero-poster.jpg");
   background-position: center 68%, center 68%;
   background-size: cover, cover;
@@ -685,5 +686,35 @@ a {
 
   a {
     text-decoration: underline;
+  }
+}
+
+/* 首页背景蒙层调节器（访客可自行调整，保存在本地） */
+.veil-control {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.8rem;
+  background: rgba(247, 244, 238, 0.94);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 20px rgba(20, 34, 28, 0.12);
+}
+
+.veil-control input[type="range"] {
+  width: 7.5rem;
+  accent-color: var(--moss);
+}
+
+@media print {
+  .veil-control {
+    display: none;
   }
 }
