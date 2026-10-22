@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   var KEY = "dz-veil";
   var input = document.querySelector("[data-veil]");
   if (!input) return;
