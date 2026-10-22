@@ -9,11 +9,11 @@ hero:
   poster: /assets/media/west-lake/hero-poster.jpg
   credits:
     - role: 封面摄影
-      title: Sunrise at Xihu, Westlake
-      author: Carsten Ullrich
-      author_url: https://www.flickr.com/people/7926008@N08
-      source_url: https://commons.wikimedia.org/wiki/File:Sunrise_at_Xihu_(Westlake),_Hangzhou_105.jpg
-      license: CC BY-SA 2.0
-      license_url: https://creativecommons.org/licenses/by-sa/2.0/
-      changes: 未作裁切或调色
-      sha256: 9ce7ae4df0057664ea48c098a9e767e8b7cfb53cdf965950160b4b1cc4dc18e5
+      title: West Lake and Hangzhou Skyline
+      author: Windmemories
+      author_url: https://commons.wikimedia.org/wiki/User:Windmemories
+      source_url: https://commons.wikimedia.org/wiki/File:20260424_West_Lake_and_Hangzhou_Skyline.jpg
+      license: CC BY-SA 4.0
+      license_url: https://creativecommons.org/licenses/by-sa/4.0/
+      changes: 裁切为 16:9，并轻微提亮、提高饱和度
+      sha256: 1227d285722a65a0e2a40e5a788c1607ec57339d295553a71b0b6b7d29b20753

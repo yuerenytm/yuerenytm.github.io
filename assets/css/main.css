@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --ink: #1c2420;
   --ink-soft: #3d4944;
   --muted: #5e6a64;
@@ -304,7 +304,7 @@ a {
   color: var(--hero-ink);
   background-color: var(--moss-deep);
   background-image: var(--hero-image);
-  background-position: center 42%;
+  background-position: center 68%;
   background-size: cover;
 }
 
@@ -332,8 +332,7 @@ a {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to bottom, rgba(10, 16, 14, 0.66) 0%, rgba(10, 16, 14, 0.42) 28%, rgba(10, 16, 14, 0.5) 62%, rgba(10, 16, 14, 0.68) 100%),
-    radial-gradient(ellipse at center, rgba(10, 16, 14, 0.12), rgba(10, 16, 14, 0.38) 78%);
+    linear-gradient(to bottom, rgba(10, 16, 14, 0.34) 0%, rgba(10, 16, 14, 0.12) 30%, rgba(10, 16, 14, 0.20) 62%, rgba(10, 16, 14, 0.46) 100%);
   pointer-events: none;
 }
 
@@ -346,9 +345,10 @@ a {
 
 .hero__kicker {
   margin-bottom: 1.15rem;
-  color: rgba(244, 240, 230, 0.82);
+  color: rgba(244, 240, 230, 0.85);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
 }
 
 .hero__title {
@@ -369,6 +369,7 @@ a {
   letter-spacing: 0.12em;
   line-height: 1.75;
   text-wrap: balance;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
 }
 
 .hero__enter {
