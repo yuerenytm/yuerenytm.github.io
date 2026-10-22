@@ -273,12 +273,12 @@ a {
   font-size: 0.88em;
 }
 
-/* 首页整页沿用同一张西湖照片：固定背景 + 轻微纸色蒙层，
-   正文放在半透明纸卡上，保证可读性 */
+/* 首页整页沿用同一张西湖照片：固定背景 + 一层纸色薄纱，
+   让照片铺满整页，同时保证正文可读 */
 .layout-home {
   background-color: var(--paper);
   background-image:
-    linear-gradient(rgba(243, 239, 230, 0.18), rgba(243, 239, 230, 0.30)),
+    linear-gradient(rgba(243, 239, 230, 0.72), rgba(243, 239, 230, 0.78)),
     url("../media/west-lake/hero-poster.jpg");
   background-position: center 68%, center 68%;
   background-size: cover, cover;
@@ -289,19 +289,6 @@ a {
 .layout-home .home-archive,
 .layout-home .site-footer {
   background: transparent;
-}
-
-.layout-home .home-archive .shell {
-  padding: 2.4rem clamp(1.25rem, 3vw, 2.75rem);
-  background: rgba(246, 242, 234, 0.93);
-  border-radius: 2px;
-  box-shadow: 0 18px 50px rgba(20, 34, 28, 0.14);
-}
-
-.layout-home .site-footer .shell {
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
-  background: rgba(246, 242, 234, 0.88);
 }
 
 .layout-home .site-header {
