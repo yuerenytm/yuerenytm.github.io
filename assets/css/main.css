@@ -285,7 +285,7 @@ a {
   inset: 0;
   z-index: -1;
   background-image:
-    linear-gradient(rgba(243, 239, 230, 0.76), rgba(243, 239, 230, 0.82)),
+    linear-gradient(rgba(243, 239, 230, 0.70), rgba(243, 239, 230, 0.76)),
     url("../media/west-lake/hero-poster.jpg");
   background-position: center 68%, center 68%;
   background-size: cover, cover;
@@ -422,7 +422,7 @@ a {
   left: max(1.25rem, calc((100% - var(--wide)) / 2));
   max-width: 36rem;
   margin: 0;
-  color: rgba(244, 240, 230, 0.84);
+  color: rgba(28, 36, 32, 0.62);
   font-size: 0.75rem;
   line-height: 1.6;
   letter-spacing: 0.01em;
